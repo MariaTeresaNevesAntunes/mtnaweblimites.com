@@ -1,73 +1,41 @@
-# Welcome to your Lovable project
+# MTNA – Matemática Sem Limites
 
-## Project info
+Projeto educativo em React + Vite para apresentar conteúdos, exercícios e materiais sobre limites matemáticos.
 
-**URL**: https://lovable.dev/projects/5935df01-9db4-48d9-80b1-b5155842e0fe
+## Site oficial
 
-## How can I edit this code?
+- Domínio principal: https://mtnaweblimites.com/
 
-There are several ways of editing your application.
+## Tecnologias
 
-**Use Lovable**
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5935df01-9db4-48d9-80b1-b5155842e0fe) and start prompting.
+## Como executar localmente
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Como compilar para produção
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## Deploy e domínio
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Este projeto foi migrado do ambiente Lovable para GitHub e agora deve ser publicado diretamente em um host estático ou servidor de produção com o domínio configurado corretamente.
 
-## What technologies are used for this project?
+Para o Google AdSense, o importante é manter a identidade do site consistente com o domínio real, por exemplo:
 
-This project is built with:
+- marca: MTNA – Matemática Sem Limites
+- domínio: mtnaweblimites.com
+- URLs públicas: https://mtnaweblimites.com/
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/5935df01-9db4-48d9-80b1-b5155842e0fe) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Evite nomes antigos genéricos ou incompatíveis com o domínio final, porque isso pode causar confusão na validação do site.
