@@ -4,7 +4,7 @@ Projeto educativo em React + Vite para apresentar conteúdos, exercícios e mate
 
 ## Site oficial
 
-- Domínio principal: https://mtnaweblimites.com/
+- Domínio principal: https://mtnaweblimites.org/
 
 ## Tecnologias
 
@@ -35,7 +35,7 @@ Este projeto foi migrado do ambiente Lovable para GitHub e agora deve ser public
 Para o Google AdSense, o importante é manter a identidade do site consistente com o domínio real, por exemplo:
 
 - marca: MTNA – Matemática Sem Limites
-- domínio: mtnaweblimites.com
-- URLs públicas: https://mtnaweblimites.com/
+- domínio: mtnaweblimites.org
+- URLs públicas: https://mtnaweblimites.org/
 
 Evite nomes antigos genéricos ou incompatíveis com o domínio final, porque isso pode causar confusão na validação do site.

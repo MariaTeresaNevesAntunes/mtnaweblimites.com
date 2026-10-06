@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 
-const SITE_URL = "https://limt.info";
+const SITE_URL = "https://mtnaweblimites.org";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 interface SEOProps {

@@ -106,7 +106,7 @@ const BlogPost = () => {
           inLanguage: "pt-PT",
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://mtnaweblimites.com/blog/${article.slug}`,
+            "@id": `https://mtnaweblimites.org/blog/${article.slug}`,
           },
           author: { "@type": "Organization", name: "MTNA – Matemática Sem Limites" },
           publisher: {
@@ -114,7 +114,7 @@ const BlogPost = () => {
             name: "MTNA – Matemática Sem Limites",
             logo: {
               "@type": "ImageObject",
-              url: "https://mtnaweblimites.com/og-image.png",
+              url: "https://mtnaweblimites.org/og-image.png",
             },
           },
         }}
