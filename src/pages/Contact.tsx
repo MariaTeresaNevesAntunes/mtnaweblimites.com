@@ -10,7 +10,7 @@ import { Mail, MessageSquare, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { SEO } from "@/components/SEO";
-import { supabase } from "@/integrations/supabase/client";
+import { getSupabaseClient } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Nome muito longo"),
@@ -57,31 +57,46 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
+    try {
+      const { error } = await getSupabaseClient()
+        .from("contact_messages")
+        .insert({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+        });
 
-    const { error } = await supabase.from("contact_messages").insert({
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      subject: formData.subject.trim(),
-      message: formData.message.trim(),
-    });
+      if (error) {
+        console.error("Supabase rejected the contact message", error);
+        toast({
+          title: "Não foi possível enviar",
+          description: "Tenta novamente dentro de alguns instantes.",
+          variant: "destructive",
+        });
+        return;
+      }
 
-    setIsSubmitting(false);
-
-    if (error) {
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      toast({
+        title: "Mensagem enviada!",
+        description: "Obrigado pelo teu contacto. Responderemos em breve.",
+      });
+    } catch (error) {
+      console.error("Contact message submission failed", error);
       toast({
         title: "Não foi possível enviar",
-        description: "Tenta novamente dentro de alguns instantes.",
+        description:
+          error instanceof Error &&
+          error.message.startsWith("Supabase is not configured")
+            ? "O formulário de contacto não está configurado neste deploy. Define VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY no workflow do GitHub."
+            : "Tenta novamente dentro de alguns instantes.",
         variant: "destructive",
       });
-      return;
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado pelo teu contacto. Responderemos em breve.",
-    });
   };
 
   if (isSubmitted) {
