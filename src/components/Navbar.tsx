@@ -15,6 +15,7 @@ const sectionItems = [
 const pageItems = [
   { path: '/sobre', label: '📘 Sobre' },
   { path: '/recursos', label: '📚 Recursos' },
+  { path: '/funcoes', label: '📐 Funções' },
   { path: '/blog', label: '📝 Blog' },
   { path: '/contato', label: '📩 Contato' }
 ];

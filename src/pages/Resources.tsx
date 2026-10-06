@@ -2,10 +2,11 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, Video, Link as LinkIcon, Download, ExternalLink, Eye } from "lucide-react";
+import { BookOpen, FileText, Video, Link as LinkIcon, Download, ExternalLink, Eye } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { SolvedExercises } from "@/components/SolvedExercises";
 import { AdSense } from "@/components/AdSense";
 
@@ -14,19 +15,19 @@ const resources = {
     {
       title: "Introdução aos Limites",
       description: "Vídeo explicativo sobre o conceito básico de limite.",
-      url: "#",
+      url: "https://pt.khanacademy.org/math/calculus-1/cs1-limits-and-continuity",
       duration: "15 min"
     },
     {
       title: "Limites Laterais Explicados",
       description: "Como calcular e interpretar limites laterais.",
-      url: "#",
+      url: "https://pt.khanacademy.org/math/calculus-1/cs1-limits-and-continuity/cs1-estimating-limit-values-from-graphs",
       duration: "12 min"
     },
     {
       title: "Resolvendo Indeterminações",
       description: "Técnicas para resolver formas indeterminadas.",
-      url: "#",
+      url: "https://pt.khanacademy.org/math/calculus-1/cs1-limits-and-continuity/cs1-determining-limits-using-algebraic-manipulation",
       duration: "20 min"
     }
   ],
@@ -42,12 +43,6 @@ const resources = {
       description: "Ficha de exercícios de limites de funções para 11.º/12.º ano com resoluções.",
       url: "/pdfs/exercicios-resolvidos-limites.pdf",
       pages: "21 páginas"
-    },
-    {
-      title: "Limites Notáveis - Demonstrações",
-      description: "Demonstrações matemáticas dos limites notáveis.",
-      url: "#",
-      pages: "10 páginas"
     }
   ],
   links: [
@@ -133,6 +128,26 @@ const Resources = () => {
                 </Card>
               ))}
             </div>
+          </section>
+
+          <section className="mb-12" aria-labelledby="study-guides-title">
+            <h2 id="study-guides-title" className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <BookOpen className="h-6 w-6 text-primary" />
+              Guias de Estudo
+            </h2>
+            <Card className="border-primary/20">
+              <CardHeader className="pb-2">
+                <CardTitle>Limites Fundamentais</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  Fórmulas essenciais, exercícios resolvidos passo a passo, quiz e flashcards para consolidar o tema.
+                </p>
+                <Button asChild>
+                  <Link to="/limites-fundamentais">Estudar limites fundamentais</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </section>
 
           {/* PDFs Section */}

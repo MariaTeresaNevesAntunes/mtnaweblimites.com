@@ -12,8 +12,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="MTNA – Matemática Sem Limites"
-        description="Plataforma educativa gratuita para aprender limites matemáticos. Explicações claras, exemplos práticos e exercícios sobre limites laterais, infinitos e indeterminações."
+        title="MTNA – Limites Matemáticos e Cálculo | Exercícios Resolvidos"
+        description="Aprende limites matemáticos de forma simples. Exercícios resolvidos, quizzes interativos, flashcards e PDFs gratuitos para o secundário e universidade."
       />
       {/* Navigation Bar */}
       <Navbar />

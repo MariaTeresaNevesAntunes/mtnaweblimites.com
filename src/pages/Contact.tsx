@@ -10,6 +10,7 @@ import { Mail, MessageSquare, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { SEO } from "@/components/SEO";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Nome muito longo"),
@@ -56,13 +57,27 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
+    const { error } = await supabase.from("contact_messages").insert({
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      subject: formData.subject.trim(),
+      message: formData.message.trim(),
+    });
+
     setIsSubmitting(false);
+
+    if (error) {
+      toast({
+        title: "Não foi possível enviar",
+        description: "Tenta novamente dentro de alguns instantes.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitted(true);
-    
+    setFormData({ name: "", email: "", subject: "", message: "" });
     toast({
       title: "Mensagem enviada!",
       description: "Obrigado pelo teu contacto. Responderemos em breve.",

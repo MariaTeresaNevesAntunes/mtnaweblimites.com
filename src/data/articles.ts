@@ -556,4 +556,102 @@ Se m é finito e não nulo, e b é finito, então y = mx + b é assíntota oblí
 Assíntotas são o esqueleto de qualquer esboço gráfico. Domínio, laterais e limites no infinito — é literalmente tudo o que precisas. Um bom aluno de cálculo deve conseguir esboçar uma função racional em menos de dois minutos com esta técnica.
 `,
   },
+  {
+    id: 11,
+    title: "Limites e Continuidade: A Ligação Essencial",
+    excerpt:
+      "Entende o que significa uma função ser contínua, como usar limites para o provar e quais são os três tipos de descontinuidade que aparecem nos exames.",
+    date: "2025-01-15",
+    readTime: "8 min",
+    category: "Fundamentos",
+    slug: "limites-e-continuidade",
+    content: `
+## Porque é que limites e continuidade andam sempre juntos
+
+Quando falamos de **limites e continuidade** estamos, na prática, a falar do mesmo assunto visto de dois ângulos. O limite descreve para onde a função *tende*; a continuidade compara esse destino com o valor que a função *realmente assume*. Se coincidirem, o gráfico desenha-se sem levantar o lápis do papel.
+
+## Definição formal de continuidade
+
+Uma função f é contínua num ponto a quando se verificam **três condições em simultâneo**:
+
+1. f(a) existe (o ponto a pertence ao domínio);
+2. lim (x → a) f(x) existe (os limites laterais existem e são iguais);
+3. lim (x → a) f(x) = f(a).
+
+    f contínua em a  ⟺  lim (x → a) f(x) = f(a)
+
+Se falhar qualquer uma das três, a função é **descontínua** em a. Repara que a ordem importa: podes ter limite sem ter imagem, e podes ter imagem sem ter limite.
+
+## Os três tipos de descontinuidade
+
+### 1. Descontinuidade removível
+
+Os limites laterais existem e são iguais, mas ou f(a) não está definida, ou está definida com outro valor. Chama-se removível porque basta redefinir f(a) para "colar" o buraco.
+
+    f(x) = (x² − 4)/(x − 2),  x ≠ 2
+
+Aqui lim (x → 2) f(x) = 4, mas f(2) não existe. Se definirmos f(2) = 4, a função passa a ser contínua.
+
+### 2. Descontinuidade de salto
+
+Os limites laterais existem mas **são diferentes**. É o caso típico das funções definidas por ramos:
+
+    f(x) = x + 1, se x < 0
+    f(x) = x − 1, se x ≥ 0
+
+À esquerda de 0 a função tende para 1; à direita tende para −1. Há um salto de amplitude 2 e nada o remove.
+
+### 3. Descontinuidade infinita
+
+Pelo menos um dos limites laterais é infinito — o gráfico dispara para cima ou para baixo junto de uma **assíntota vertical**:
+
+    lim (x → 0⁻) 1/x = −∞      lim (x → 0⁺) 1/x = +∞
+
+## Continuidade num intervalo
+
+Dizer que f é contínua em [a, b] significa que é contínua em todos os pontos interiores e **contínua à direita** em a e **contínua à esquerda** em b, ou seja:
+
+    lim (x → a⁺) f(x) = f(a)      e      lim (x → b⁻) f(x) = f(b)
+
+## Que funções são sempre contínuas?
+
+No seu domínio, são contínuas:
+
+- funções polinomiais (contínuas em ℝ);
+- funções racionais (exceto onde o denominador se anula);
+- funções trigonométricas, exponenciais e logarítmicas;
+- somas, produtos, quocientes e composições de funções contínuas.
+
+Este resultado é enormemente prático: se a função é contínua em a, o limite calcula-se por **substituição direta**.
+
+> Para uma função contínua, calcular o limite é simplesmente avaliar a função no ponto.
+
+## Exercício resolvido: encontrar o parâmetro k
+
+Determina k para que f seja contínua em x = 1:
+
+    f(x) = (x² − 1)/(x − 1),  se x ≠ 1
+    f(x) = k,                 se x = 1
+
+**Passo 1** — calcular o limite:
+
+    lim (x → 1) (x² − 1)/(x − 1) = lim (x → 1) (x − 1)(x + 1)/(x − 1) = lim (x → 1) (x + 1) = 2
+
+**Passo 2** — impor a terceira condição de continuidade: f(1) = k tem de igualar o limite. Logo **k = 2**.
+
+## Teorema de Bolzano: a recompensa da continuidade
+
+Se f é contínua em [a, b] e f(a) e f(b) têm sinais contrários, então existe pelo menos um c em ]a, b[ tal que f(c) = 0. Este teorema é usado em exames para provar a existência de soluções sem as calcular — e só funciona porque a função é contínua.
+
+## Erros mais comuns
+
+- Confundir "existe limite" com "é contínua": pode existir limite e a função nem estar definida no ponto.
+- Esquecer de verificar os **dois** limites laterais em funções por ramos.
+- Assumir continuidade num ponto fora do domínio (por exemplo, x = 0 em 1/x).
+
+## Resumo
+
+A continuidade é o teste que confirma se o limite e o valor da função concordam. Domina as três condições, aprende a classificar as descontinuidades e ganhas simultaneamente uma ferramenta de cálculo (substituição direta) e uma ferramenta de demonstração (Bolzano).
+`,
+  },
 ];

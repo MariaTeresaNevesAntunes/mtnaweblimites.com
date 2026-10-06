@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const TermsOfUse = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Termos de Uso"
+        description="Condições de utilização da plataforma MTNA – Matemática Sem Limites: direitos, deveres e regras de uso dos conteúdos educativos."
+      />
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link 
           to="/" 

@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Política de Privacidade"
+        description="Saiba como o MTNA recolhe, utiliza e protege os seus dados ao navegar na plataforma educativa sobre limites matemáticos."
+      />
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link 
           to="/" 

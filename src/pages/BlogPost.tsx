@@ -95,6 +95,29 @@ const BlogPost = () => {
         title={article.title}
         description={article.excerpt}
         type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: article.title,
+          description: article.excerpt,
+          datePublished: article.date,
+          dateModified: article.date,
+          articleSection: article.category,
+          inLanguage: "pt-PT",
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://mtnaweblimites.com/blog/${article.slug}`,
+          },
+          author: { "@type": "Organization", name: "MTNA – Matemática Sem Limites" },
+          publisher: {
+            "@type": "Organization",
+            name: "MTNA – Matemática Sem Limites",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://mtnaweblimites.com/og-image.png",
+            },
+          },
+        }}
       />
       <Navbar />
 

@@ -21,7 +21,7 @@ const Blog = () => {
       <SEO 
         title="Blog"
         description="Artigos, dicas e explorações sobre limites matemáticos. Aprende com conteúdos práticos sobre cálculo e matemática."
-        type="blog"
+        type="website"
       />
       <Navbar />
       
